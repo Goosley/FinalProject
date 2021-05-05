@@ -1,0 +1,16 @@
+{% extends "final_logs/base.html" %}
+
+{% block content %}
+
+<form action="{% url 'users:register' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button name="submit">Register</button>
+    <input type="hidden" name="next" value="{% url 'final_logs:index' %}" />
+
+
+
+</form>
+
+{% endblock content %}

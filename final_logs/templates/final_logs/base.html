@@ -1,0 +1,17 @@
+<p>
+
+    <body style="background-color: rgb(250, 202, 202)" </body>
+        <font face="Optima" size="70px" color="246482"> Blake's Pizza </font><br /><br />
+        <a href="{% url 'final_logs:index' %}">Final Log</a>
+        <a href="{% url 'final_logs:pizzas' %}">Pizzas</a>
+        {% if user.is_authenticated %}
+        Hello, {{ user.username }}.
+        <a href="{% url 'users:logout' %}">Log Out</a>
+        {% else %}
+        <a href="{% url 'users:register' %}">Register</a>
+        <a href="{% url 'users:login' %}">Log In</a>
+        {% endif %}
+
+</p>
+
+{% block content %}{% endblock content %}
